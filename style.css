@@ -1,0 +1,108 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: bebas, sans-serif;
+    list-style-type: none;
+    text-decoration: none;
+    color: currentColor;
+    
+}
+body{
+    background: #111;
+}
+main{
+    height: 100vh;
+}
+.general{
+    align-items: center;
+    display: flex;
+    flex:10 0 auto;
+}
+.navbar{
+    justify-content: space-between;
+    background: black;
+    color: white;
+    font-size: 2em;
+}
+.navbar img{
+    width: 50px;
+    border-radius: 25%;
+    box-shadow: 0 0 10px #009;
+    margin: 0 10px 0 0;
+
+}
+.nav-left{
+    margin-left: 5%;
+
+}
+.nav-right{
+    margin-right: 5%;
+}
+.nav-list{
+    padding: 10px;
+    justify-content: space-between;
+
+}
+.nav-item{
+    padding: 0 10px;
+}
+.cards-container{
+    background:transparent;
+    align-items: start;
+    background: transparent;
+    position: relative;
+    padding: 30px 30px;
+    overflow-x: scroll;
+    margin: 0 5px;
+}
+*::-webkit-scrollbar{
+    width: 10px;
+    height: 10px;
+    background: blue;
+}
+*::-webkit-scrollbar-thumb{
+    background: #201c29;
+    -webkit-box-shadow: inset 2px 2px 2px hsl(0,0, 100%, .25);
+}
+*::-webkit-scrollbar-track{
+    background: linear-gradient(90deg, #201c29, #201c29 1px, #17141d 0, #17141d);
+}
+.card{
+    transition: transform .5s;
+    position: relative;
+    color: #ccc;
+    overflow: hidden;
+    padding: 5px;
+    height: 200px;
+    min-width: 150px;
+    box-shadow: -1rem 0 3rem black;
+    margin-left:-2rem;
+    background: #333;
+}
+.card:first-child{
+    margin: 0;
+}
+.card:hover{
+    opacity:1;
+    z-index:1;
+    background: #222;
+    transform: translateY(-10px);
+    box-shadow: 0 0 0.5rem #999;
+    color: #ddd;
+}
+.card:hover~.card{
+    transform: translateX(2rem);
+}
+.card:first-child{
+    margin-left: 0;
+}
+.card::before{
+    position: absolute;
+    height: 100%;
+    width:100%;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    border-radius: inherit;
+    background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(255,255,255, 0.6), transparent 40%);
+}
